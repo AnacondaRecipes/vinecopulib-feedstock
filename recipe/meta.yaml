@@ -1,0 +1,38 @@
+{% set name = "vinecopulib" %}
+{% set version = "0.6.3" %}
+
+package:
+  name: {{ name }}
+  version: {{ version }}
+
+source:
+  url: https://github.com/{{ name }}/{{ name }}/archive/refs/tags/v{{ version }}.tar.gz
+  sha256: d16c906f632f96e46112400225b10c4b28532daa3c35a97208881344a88c03cc
+
+build:
+  number: 0
+
+requirements:
+  build:
+    - {{ compiler('cxx') }}
+    - cmake
+    - ninja
+    - libboost {{ boost }}
+    - eigen 3.4.0
+    - wdm 0.2.4
+
+about:
+  home: https://vinecopulib.github.io/vinecopulib
+  license: MIT
+  license_file: LICENSE
+  license_family: MIT
+  summary: |
+    A C++ library for vine copula models (w/ interfaces to R + Python)
+  description: |
+    A C++ library for vine copula models (w/ interfaces to R + Python)
+  doc_url: https://vinecopulib.github.io/vinecopulib
+  dev_url: https://github.com/vinecopulib/vinecopulib
+
+extra:
+  recipe-maintainers:
+    - lorepirri
