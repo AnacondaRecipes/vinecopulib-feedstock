@@ -28,8 +28,6 @@ requirements:
 test:
   requires:
     - {{ compiler('cxx') }}
-    - cmake
-    - ninja
   source_files:
     - examples/bicop
 
