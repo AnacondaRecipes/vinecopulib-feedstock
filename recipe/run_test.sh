@@ -1,5 +1,20 @@
 set -x
 
+# test from:
+# https://github.com/vinecopulib/vinecopulib/blob/258eb2d7758ce067ee7d53789067f0d3ebbb9375/.github/workflows/continuous_integration.yml#L123C13-L134
+
+# build a simple example
+cd examples/bicop
+
+# use additional flags for unix
+# https://github.com/vinecopulib/vinecopulib/blob/258eb2d7758ce067ee7d53789067f0d3ebbb9375/examples/bicop/CMakeLists.txt#L12
+# use -pthread
+# https://github.com/vinecopulib/vinecopulib/blob/258eb2d7758ce067ee7d53789067f0d3ebbb9375/examples/bicop/CMakeLists.txt#L29
+export FLAGS="-pthread -std=gnu++11 -Wextra -Wall -Wno-delete-non-virtual-dtor -Werror=return-type -O2 -DNDEBUG"
+${CXX} ${CXXFLAGS} ${LDFLAGS} ${FLAGS} ./src/main.cpp -I${PREFIX}/include -I${PREFIX}/include/eigen3 -isystem ${PREFIX}/include/vinecopulib -L${PREFIX}/lib -o test
+
+./test
+
 # Headers tests - Unix (not all of them, a selection)
 test -e ${PREFIX}/include/vinecopulib.hpp
 test -e ${PREFIX}/include/vinecopulib/version.hpp

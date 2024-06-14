@@ -20,6 +20,18 @@ requirements:
     - libboost {{ boost }}
     - eigen 3.4.0
     - wdm 0.2.4
+  run:
+    - libboost {{ boost }}
+    - eigen 3.4.0
+    - wdm 0.2.4
+
+test:
+  requires:
+    - {{ compiler('cxx') }}
+    - cmake
+    - ninja
+  source_files:
+    - examples/bicop
 
 about:
   home: https://vinecopulib.github.io/vinecopulib
