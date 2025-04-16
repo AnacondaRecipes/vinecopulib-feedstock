@@ -1,5 +1,5 @@
 {% set name = "vinecopulib" %}
-{% set version = "0.6.3" %}
+{% set version = "0.7.1" %}
 
 package:
   name: {{ name }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://github.com/{{ name }}/{{ name }}/archive/refs/tags/v{{ version }}.tar.gz
-  sha256: d16c906f632f96e46112400225b10c4b28532daa3c35a97208881344a88c03cc
+  sha256: ef514eaa4691186bb90c9e0490187342ffd89c2bb9d180ae8e36989c1dec8f20
 
 build:
   number: 0
@@ -23,7 +23,7 @@ requirements:
   run:
     - libboost {{ boost }}
     - eigen 3.4.0
-    - wdm 0.2.4
+    - wdm 0.2.6
 
 test:
   requires:
