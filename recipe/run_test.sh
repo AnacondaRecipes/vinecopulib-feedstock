@@ -10,7 +10,7 @@ cd examples/bicop
 # https://github.com/vinecopulib/vinecopulib/blob/258eb2d7758ce067ee7d53789067f0d3ebbb9375/examples/bicop/CMakeLists.txt#L12
 # use -pthread
 # https://github.com/vinecopulib/vinecopulib/blob/258eb2d7758ce067ee7d53789067f0d3ebbb9375/examples/bicop/CMakeLists.txt#L29
-export FLAGS="-pthread -std=gnu++11 -Wextra -Wall -Wno-delete-non-virtual-dtor -Werror=return-type -O2 -DNDEBUG"
+export FLAGS="-pthread -std=gnu++14 -Wextra -Wall -Wno-delete-non-virtual-dtor -Werror=return-type -O2 -DNDEBUG"
 ${CXX} ${CXXFLAGS} ${LDFLAGS} ${FLAGS} ./src/main.cpp -I${PREFIX}/include -I${PREFIX}/include/eigen3 -isystem ${PREFIX}/include/vinecopulib -L${PREFIX}/lib -o test
 
 ./test
