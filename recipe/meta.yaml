@@ -19,7 +19,7 @@ requirements:
     - ninja
     - libboost {{ boost }}
     - eigen 3.4.0
-    - wdm 0.2.4
+    - wdm 0.2.6
   run:
     - libboost {{ boost }}
     - eigen 3.4.0
