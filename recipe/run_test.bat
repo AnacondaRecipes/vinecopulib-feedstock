@@ -6,11 +6,8 @@
 :: build a simple example
 cd examples/bicop
 
-:: Create a copy of the library with the expected auto-linking name
-copy %LIBRARY_LIB%\boost_random.lib %LIBRARY_LIB%\libboost_random-vc142-mt-s-x64-1_82.lib
-
 :: /EHsc - https://stackoverflow.com/questions/6832666/lnk2019-when-including-asio-headers-solution-generated-with-cmake
-%CXX% ./src/main.cpp /EHsc /DBOOST_ALL_NO_LIB /I %LIBRARY_INC% /I %LIBRARY_INC%\eigen3 /I %LIBRARY_INC%\boost /I %LIBRARY_INC%\wdm /I %LIBRARY_INC%\vinecopulib /link /LIBPATH:%LIBRARY_LIB% boost_random.lib
+%CXX% ./src/main.cpp /EHsc /DBOOST_ALL_NO_LIB /I %LIBRARY_INC% /I %LIBRARY_INC%\eigen3 /I %LIBRARY_INC%\boost /I %LIBRARY_INC%\wdm /I %LIBRARY_INC%\vinecopulib /link /LIBPATH:%LIBRARY_LIB%
 
 if errorlevel 1 exit /B 1
 
